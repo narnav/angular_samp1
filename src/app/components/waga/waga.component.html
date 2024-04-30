@@ -1,0 +1,15 @@
+<button (click)="add(+delta.value)">{{ counter }}</button>
+<button (click)="sub(+delta.value)">{{ counter }}</button>
+<input #delta />
+
+<div *ngIf="products.length > 0; else empty_list">
+  <h1>My Array</h1>
+  <div *ngFor="let prod of products; let i = index; let odd = odd">
+    <h1 [ngStyle]="{ color: odd ? 'red' : 'blue' }">
+      {{ i + 1 }}, {{ prod.desc }}, {{ prod.price }}
+    </h1>
+  </div>
+</div>
+<ng-template #empty_list> empty list </ng-template>
+<h1 [ngStyle]="{color:'red'}">aaaaaaaa</h1>
+<h2 style="color: red;">aaabbb</h2>
